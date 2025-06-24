@@ -1,0 +1,36 @@
+.header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 16px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 50px;
+}
+
+.navlist {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.navlist li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.navlist a:hover {
+  color: #c80000; /* rouge foncé (adapté à ton logo rouge) */
+}

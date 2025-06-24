@@ -1,0 +1,71 @@
+.devis-page {
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 60px;
+}
+
+.devis-hero {
+
+  background-color: #fff9f8;
+  text-align: center;
+  padding: 110px 20px;
+}
+
+.devis-hero h1 {
+  font-size: 2.5rem;
+  color: #c80000;
+  margin-bottom: 10px;
+}
+
+.devis-hero p {
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.devis-form-section {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.devis-form-container {
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 600px;
+  width: 100%;
+}
+
+.devis-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+  font-weight: 500;
+}
+
+.devis-form input,
+.devis-form select,
+.devis-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.devis-form button {
+  background-color: #c80000;
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.devis-form button:hover {
+  background-color: #a00000;
+}

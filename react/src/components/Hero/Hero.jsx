@@ -5,14 +5,15 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
+        <div className="hero-image">
+          <img src="/banner.png" alt="Emballage" />
+        </div>
         <div className="hero-text">
           <h1>Des solutions d’emballage<br />sur mesure</h1>
-          <p>Nous concevons et fabriquons des emballages adaptés à vos besoins industriels, alimentaires ou commerciaux.</p>
+          <p>Nous concevons et fabriquons des emballages en papier adaptés à vos besoins industriels, alimentaires ou commerciaux.</p>
           <a href="/produits" className="hero-btn">Voir nos produits</a>
         </div>
-        <div className="hero-image">
-          <img src="/assets/images/emballage.png" alt="Emballage" />
-        </div>
+        
       </div>
     </section>
   );

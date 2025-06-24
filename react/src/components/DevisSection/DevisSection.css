@@ -1,0 +1,63 @@
+.devis-section {
+  padding: 60px 24px;
+  background-color: #fff9f8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.devis-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.devis-text {
+  flex: 1 1 400px;
+}
+
+.devis-text h2 {
+  font-size: 2.5rem;
+  color: #c80000;
+  margin-bottom: 16px;
+}
+
+.devis-text p {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.devis-btn {
+  display: inline-block;
+  background-color: #c80000;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.devis-btn:hover {
+  background-color: #a00000;
+}
+
+.devis-contact {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.devis-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.devis-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}

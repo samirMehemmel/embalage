@@ -1,0 +1,80 @@
+.produits-admin {
+  padding: 40px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+.produits-admin h1 {
+  color: #c80000;
+  margin-bottom: 30px;
+}
+
+.produit-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.produit-form input {
+  flex: 1 1 240px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.produit-form button {
+  background-color: #c80000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.produit-liste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.produit-card {
+  background: white;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.produit-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.produit-card .info {
+  padding: 16px;
+}
+
+.produit-card h3 {
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.produit-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.produit-card button {
+  margin-top: 12px;
+  background: #a00000;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}

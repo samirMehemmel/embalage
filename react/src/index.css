@@ -1,0 +1,47 @@
+/* Import de la font Poppins depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body global */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa; /* gris très clair */
+  color: #212529; /* noir doux */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Pour éviter les déformations d’images */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Lien par défaut */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Boutons sans bordure de base */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Input clean */
+input, textarea, select {
+  font-family: inherit;
+  outline: none;
+  border: none;
+}

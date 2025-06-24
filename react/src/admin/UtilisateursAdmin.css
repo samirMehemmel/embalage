@@ -1,0 +1,71 @@
+.utilisateurs-admin {
+  padding: 40px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+.utilisateurs-admin h1 {
+  color: #c80000;
+  margin-bottom: 30px;
+}
+
+.admin-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.admin-form input {
+  flex: 1 1 240px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.admin-form button {
+  background-color: #c80000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-card h3 {
+  margin: 0 0 4px 0;
+  color: #333;
+}
+
+.admin-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.admin-card button {
+  background: #a00000;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

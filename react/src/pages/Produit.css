@@ -1,0 +1,124 @@
+.produits-page {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hero */
+.produits-hero {
+  text-align: center;
+  background-color: #fff9f8;
+  padding: 110px 20px;
+}
+
+.hero-contentt {
+  max-width: 700px;
+  margin: auto;
+}
+
+.produits-hero h1 {
+  font-size: 2.5rem;
+  color: #c80000;
+  margin-bottom: 10px;
+}
+
+.produits-hero p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.hero-image {
+  margin-top: 30px;
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Liste des produits */
+.produits-list {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.produits-list h2 {
+  font-size: 2rem;
+  color: #c80000;
+  margin-bottom: 40px;
+}
+
+.produits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.produit-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  width: 280px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.produit-card:hover {
+  transform: translateY(-5px);
+}
+
+.produit-card img {
+  max-width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+/* Capacités */
+.capacites {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.capacites h2 {
+  color: #c80000;
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.capacites ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1rem;
+  color: #444;
+}
+
+.capacites li {
+  margin-bottom: 12px;
+}
+
+/* Call to Action */
+.produits-cta {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.produits-cta h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: #c80000;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #a00000;
+}
