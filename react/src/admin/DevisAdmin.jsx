@@ -19,9 +19,9 @@ function DevisAdmin() {
       },
       {
         id: 2,
-        nom: 'Sonia M.',
-        email: 'sonia@example.com',
-        tel: '0555987654',
+        nom: 'Mohammed G',
+        email: 'Mohammed@example.com',
+        tel: '0542743184',
         produit: 'Boîte alimentaire',
         quantite: 200,
         message: 'Pour pâtisserie, 3 tailles différentes.',

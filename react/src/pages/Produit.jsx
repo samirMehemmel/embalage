@@ -22,7 +22,6 @@ const produits = [
 function Produits() {
   return (
     <div className="produits-page">
-      {/* Hero Section */}
       <section className="produits-hero">
         <div className="hero-contentt">
           <h1>Notre Production</h1>
@@ -35,7 +34,6 @@ function Produits() {
         />
       </section>
 
-      {/* Liste des produits */}
       <section className="produits-list">
         <h2>Nos types d’emballages</h2>
         <div className="produits-grid">
@@ -49,7 +47,6 @@ function Produits() {
         </div>
       </section>
 
-      {/* Section technique */}
       <section className="capacites">
         <h2>Notre savoir-faire</h2>
         <ul>

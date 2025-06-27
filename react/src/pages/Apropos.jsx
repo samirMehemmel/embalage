@@ -2,9 +2,9 @@ import React from 'react';
 import './Apropos.css';
 
 function Apropos() {
+
   return (
     <section className="apropos-page">
-      {/* Hero Section */}
       <div className="apropos-hero">
         <div className="apropos-hero-content">
           <h1>À propos de notre entreprise</h1>

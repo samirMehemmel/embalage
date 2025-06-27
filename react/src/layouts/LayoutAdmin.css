@@ -1,0 +1,43 @@
+.layout-admin {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-sidebar {
+  width: 240px;
+  background-color: #c80000;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.admin-sidebar nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: 0.3s;
+}
+
+.admin-sidebar nav a:hover,
+.admin-sidebar nav a.active {
+  background-color: white;
+  color: #c80000;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+
+.admin-content {
+  flex: 1;
+  background-color: #f4f4f4;
+  padding: 40px;
+}

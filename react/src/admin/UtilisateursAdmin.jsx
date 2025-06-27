@@ -10,8 +10,8 @@ function UtilisateursAdmin() {
     },
     {
       id: 2,
-      nom: 'Sarah B.',
-      email: 'sarah@example.com',
+      nom: 'mohammed G',
+      email: 'Mohammed@example.com',
     },
   ]);
 

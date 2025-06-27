@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import LayoutVitrine from '../layouts/LayoutVitrine';
+import LayoutAdmin from '../layouts/LayoutAdmin';
 
 import Home from '../pages/Home';
 import Apropos from '../pages/Apropos';
@@ -25,12 +26,14 @@ function AppRoutes() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/obtenir-devis" element={<ObtenirDevis />} />
       </Route>
-
       <Route path="/admin/login" element={<AdminLogin />} />
-      <Route path="/admin" element={<AdminDashboard />} />
-      <Route path="/admin/devis" element={<DevisAdmin />} />
-      <Route path="/admin/produits" element={<ProduitsAdmin />} />
-      <Route path="/admin/utilisateurs" element={<UtilisateursAdmin />} />
+
+      <Route element={<LayoutAdmin />}>
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/devis" element={<DevisAdmin />} />
+        <Route path="/admin/produits" element={<ProduitsAdmin />} />
+        <Route path="/admin/utilisateurs" element={<UtilisateursAdmin />} />
+      </Route>
     </Routes>
   );
 }
