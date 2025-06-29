@@ -1,32 +1,28 @@
 import dotenv from 'dotenv';
-import sql from 'mssql';
+import mysql from 'mysql2/promise';
 
 dotenv.config();
 
 const dbConfig = {
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  server: process.env.DB_SERVER,
-  database: process.env.DB_NAME,
-  options: {
-    encrypt: false,
-    trustServerCertificate: true,
-  },
+  host: process.env.DB_HOST,        // Par exemple : localhost
+  user: process.env.DB_USER,        // Ton utilisateur MySQL
+  password: process.env.DB_PASSWORD,// Ton mot de passe
+  database: process.env.DB_NAME     // Le nom de la base
 };
 
-const sqlPool = new sql.ConnectionPool(dbConfig);
+let connection;
 
-async function connectionDatabase() {
+async function connectToDatabase() {
   try {
-    console.log('Tentative de connexion à la base de données MSSQL...');
-    await sqlPool.connect();
-    console.log('✅ Connexion MSSQL établie avec succès');
-    return true;
+    console.log('Tentative de connexion à la base de données MySQL...');
+    connection = await mysql.createConnection(dbConfig);
+    console.log('✅ Connexion MySQL établie avec succès');
+    return connection;
   } catch (err) {
-    console.error('❌ Erreur de connexion MSSQL:', err.message);
+    console.error('❌ Erreur de connexion MySQL:', err.message);
     console.error('Stack:', err.stack);
-    return false;
+    return null;
   }
 }
 
-export { sqlPool, connectionDatabase };
+export { connectToDatabase };

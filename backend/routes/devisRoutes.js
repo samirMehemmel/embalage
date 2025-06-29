@@ -1,13 +1,9 @@
 import express from 'express';
-import {
-    getAllDevis,
-    getDetailsDevis
-} from '../controllers/devisController.js'
+import { getAllDevis, getDetailsDevis } from '../controllers/devisController.js';
+
 const router = express.Router();
 
-
-router.get('/AllDevis', getAllDevis);
-router.get('/detailsDevis', getDetailsDevis);
-
+router.get('/', getAllDevis);              // GET /api/devis
+router.get('/:id', getDetailsDevis);       // GET /api/devis/:id
 
 export default router;

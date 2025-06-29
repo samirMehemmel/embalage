@@ -1,36 +1,41 @@
-import { sqlPool } from "../config/db.js";
+import { connectToDatabase } from '../config/db.js';
 
+// ✅ Récupérer tous les devis
 export const getAllDevis = async (req, res) => {
-    try{
-        const request = sqlPool.request();
-        const result = await request.query('SELECT * FROM DEVIS');
+  try {
+    const connection = await connectToDatabase();
+    const [rows] = await connection.execute('SELECT * FROM DEVIS');
 
-        res.status(200).json({
-            devis: result.recordset,
-        });
-    } catch (err){
-        console.error('Erreur lors de la récupération des devis',err.message);
-        res.status(500).json({
-            error: 'Erreur dans la requette sql',
-        })
-   }
+    res.status(200).json({
+      devis: rows,
+    });
+  } catch (err) {
+    console.error('❌ Erreur lors de la récupération des devis :', err.message);
+    res.status(500).json({
+      error: 'Erreur lors de la requête SQL',
+    });
+  }
 };
 
-export const getDetailsDevis = async (req, res)=>{
-    try{
-        const id_devis = req.query;
-        const request = sqlPool.request();
+// ✅ Récupérer un seul devis par son id
+export const getDetailsDevis = async (req, res) => {
+  const { id } = req.params;
 
-        const result = await request.query(`SELECT * FROM DEVIS WHERE`);
-        
-        res.status(200).json({
-            detailt: result.recordset,
-        })
-    } catch(err){
-        console.error(err.message);
-        res.status(500).json({
-            error:'Erreur dans la requette sql'
-        })
-        
+  try {
+    const connection = await connectToDatabase();
+    const [rows] = await connection.execute('SELECT * FROM DEVIS WHERE id = ?', [id]);
+
+    if (rows.length === 0) {
+      return res.status(404).json({ error: 'Devis non trouvé' });
     }
-}
+
+    res.status(200).json({
+      details: rows[0],
+    });
+  } catch (err) {
+    console.error('❌ Erreur lors de la récupération du devis :', err.message);
+    res.status(500).json({
+      error: 'Erreur lors de la requête SQL',
+    });
+  }
+};
