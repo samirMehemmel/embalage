@@ -8,7 +8,7 @@ export const getProduits = async (req, res) => {
 
     res.status(200).json({ produits: rows });
   } catch (err) {
-    console.error('❌ Erreur lors de la récupération des produits:', err.message);
+    console.error(' Erreur lors de la récupération des produits:', err.message);
     res.status(500).json({ error: 'Erreur serveur' });
   }
 };

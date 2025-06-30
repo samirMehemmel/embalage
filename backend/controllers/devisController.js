@@ -1,6 +1,6 @@
 import { connectToDatabase } from '../config/db.js';
 
-// ✅ Récupérer tous les devis
+//  Récupérer tous les devis
 export const getAllDevis = async (req, res) => {
   try {
     const connection = await connectToDatabase();
@@ -10,14 +10,14 @@ export const getAllDevis = async (req, res) => {
       devis: rows,
     });
   } catch (err) {
-    console.error('❌ Erreur lors de la récupération des devis :', err.message);
+    console.error(' Erreur lors de la récupération des devis :', err.message);
     res.status(500).json({
       error: 'Erreur lors de la requête SQL',
     });
   }
 };
 
-// ✅ Récupérer un seul devis par son id
+//  Récupérer un seul devis par son id
 export const getDetailsDevis = async (req, res) => {
   const { id } = req.params;
 
