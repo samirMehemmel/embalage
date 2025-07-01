@@ -6,5 +6,9 @@ import {
 
 const router = express.Router();
 
+router.get('/', getCaisse);
+router.post('/', insertCaisse);
 
-router.get('/caisse', getCaisse);
+
+
+export default router;

@@ -8,15 +8,35 @@ function AdminLogin() {
   const [erreur, setErreur] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    // 🔒 Remplacer ceci par une vérification via ton backend
-    if (email === 'admin@example.com' && motDePasse === '123456') {
-      localStorage.setItem('adminAuth', 'true');
-      navigate('/admin');
-    } else {
-      setErreur("Email ou mot de passe incorrect.");
+    try {
+      const response = await fetch('http://localhost:5000/api/admin/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, mot_de_passe: motDePasse })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Stocker le token dans le localStorage
+        localStorage.setItem('adminToken', data.token);
+        localStorage.setItem('adminId', data.admin.id);
+        localStorage.setItem('adminEmail', data.admin.email);
+
+        // Redirection vers dashboard admin
+        navigate('/admin');
+      } else {
+        setErreur(data.error || 'Échec de connexion');
+      }
+
+    } catch (err) {
+      console.error('Erreur de connexion :', err);
+      setErreur("Erreur réseau ou serveur.");
     }
   };
 

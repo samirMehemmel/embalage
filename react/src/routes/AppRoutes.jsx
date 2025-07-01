@@ -10,31 +10,39 @@ import Produits from '../pages/Produit';
 import Contact from '../pages/Contact';
 import ObtenirDevis from '../pages/ObtenirDevis';
 
+import AdminCaisse from '../admin/AdminCaisse';
+
 import AdminLogin from '../admin/AdminLogin';
 import AdminDashboard from '../admin/AdminDashboard';
 import DevisAdmin from '../admin/DevisAdmin';
 import ProduitsAdmin from '../admin/ProduitsAdmin';
 import UtilisateursAdmin from '../admin/UtilisateursAdmin';
+import LogoutAdmin from '../admin/LogoutAdmin';
+
 
 function AppRoutes() {
   return (
     <Routes>
-      <Route element={<LayoutVitrine />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/a-propos" element={<Apropos />} />
-        <Route path="/produits" element={<Produits />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/obtenir-devis" element={<ObtenirDevis />} />
-      </Route>
-      <Route path="/admin/login" element={<AdminLogin />} />
+  <Route element={<LayoutVitrine />}>
+    <Route path="/" element={<Home />} />
+    <Route path="/a-propos" element={<Apropos />} />
+    <Route path="/produits" element={<Produits />} />
+    <Route path="/contact" element={<Contact />} />
+    <Route path="/obtenir-devis" element={<ObtenirDevis />} />
+  </Route>
 
-      <Route element={<LayoutAdmin />}>
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/admin/devis" element={<DevisAdmin />} />
-        <Route path="/admin/produits" element={<ProduitsAdmin />} />
-        <Route path="/admin/utilisateurs" element={<UtilisateursAdmin />} />
-      </Route>
-    </Routes>
+  <Route path="/admin/login" element={<AdminLogin />} />
+
+  <Route path="/admin" element={<LayoutAdmin />}>
+    <Route index element={<AdminDashboard />} />
+    <Route path="devis" element={<DevisAdmin />} />
+    <Route path="produits" element={<ProduitsAdmin />} />
+    <Route path="utilisateurs" element={<UtilisateursAdmin />} />
+    <Route path="logout" element={<LogoutAdmin />} />
+    <Route path="caisse" element={<AdminCaisse />} />
+  </Route>
+</Routes>
+
   );
 }
 

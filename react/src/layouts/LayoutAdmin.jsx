@@ -1,9 +1,10 @@
-// src/layouts/LayoutAdmin.jsx
 import React from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import './LayoutAdmin.css';
 
 function LayoutAdmin() {
+  const adminEmail = localStorage.getItem('adminEmail');
+
   return (
     <div className="layout-admin">
       <aside className="admin-sidebar">
@@ -13,6 +14,11 @@ function LayoutAdmin() {
           <NavLink to="/admin/produits">📦 Produits</NavLink>
           <NavLink to="/admin/devis">📥 Devis</NavLink>
           <NavLink to="/admin/utilisateurs">👤 Admins</NavLink>
+
+          {adminEmail === 'mehemmelsamir@gmail.com' && (
+            <NavLink to="/admin/caisse">💰 Caisse</NavLink>
+          )}
+
           <NavLink to="/admin/logout">🔓 Déconnexion</NavLink>
         </nav>
       </aside>
