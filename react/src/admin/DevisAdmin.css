@@ -1,4 +1,4 @@
-.devis-admin {
+/* .devis-admin {
   padding: 40px;
   font-family: 'Poppins', sans-serif;
   background-color: #f4f4f4;
@@ -33,4 +33,309 @@
 
 .devis-admin tr:hover {
   background-color: #f9f9f9;
+} */
+
+
+
+.admin-page {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.admin-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.admin-header h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.admin-header p {
+  color: #777;
+}
+
+/* Statistiques */
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background-color: #fff;
+  border-left: 6px solid #888;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  min-width: 140px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  font-size: 1rem;
+  color: #444;
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.stat-card.nouveau { border-left-color: #007bff; }
+.stat-card.en-cours { border-left-color: #ffc107; }
+.stat-card.traite { border-left-color: #28a745; }
+.stat-card.ferme { border-left-color: #dc3545; }
+
+/* Filtres */
+.filters-container {
+  margin-bottom: 1rem;
+}
+
+.filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.filters-row select,
+.filters-row input[type="date"] {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.btn-reset {
+  padding: 0.5rem 1rem;
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-reset:hover {
+  background-color: #ddd;
+}
+
+/* Erreur */
+.error-message {
+  background-color: #ffdddd;
+  color: #a00;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-left: 4px solid #a00;
+}
+
+/* Table */
+.table-container {
+  overflow-x: auto;
+}
+
+.demandes-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  min-width: 900px;
+}
+
+.demandes-table th,
+.demandes-table td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.demandes-table th {
+  background-color: #f2f2f2;
+}
+
+.statut-badge {
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.statut-nouveau { background-color: #007bff; }
+.statut-en-cours { background-color: #ffc107; color: #000; }
+.statut-traite { background-color: #28a745; }
+.statut-ferme { background-color: #dc3545; }
+
+.btn-details {
+  padding: 0.4rem 0.8rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-details:hover {
+  background-color: #0056b3;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.btn-pagination {
+  padding: 0.4rem 1rem;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-pagination:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.page-info {
+  font-size: 0.95rem;
+}
+
+/* Spinner */
+.loading-spinner {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.spinner {
+  border: 4px solid #eee;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.modal-header h2 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.detail-item label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.detail-message {
+  margin-top: 1rem;
+}
+
+.modal-footer {
+  text-align: right;
+  margin-top: 1.5rem;
+}
+
+.btn-secondary {
+  background-color: #eee;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.statut-select {
+  width: 100%;
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .stat-card {
+    flex: 1 1 45%;
+  }
+
+  .demandes-table {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-card {
+    flex: 1 1 100%;
+  }
+
+  .btn-details,
+  .btn-pagination,
+  .btn-reset {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
 }

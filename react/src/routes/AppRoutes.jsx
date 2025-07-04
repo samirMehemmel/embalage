@@ -8,13 +8,13 @@ import Home from '../pages/Home';
 import Apropos from '../pages/Apropos';
 import Produits from '../pages/Produit';
 import Contact from '../pages/Contact';
-import ObtenirDevis from '../pages/ObtenirDevis';
+import ObtenirDevis from '../pages/ObtenirDevis.jsx';
 
-import AdminCaisse from '../admin/AdminCaisse';
+import AdminCaisse from '../admin/GestionCaisse';
 
 import AdminLogin from '../admin/AdminLogin';
 import AdminDashboard from '../admin/AdminDashboard';
-import DevisAdmin from '../admin/DevisAdmin';
+import DevisAdmin from '../admin/DevisAdmin.jsx';
 import ProduitsAdmin from '../admin/ProduitsAdmin';
 import UtilisateursAdmin from '../admin/UtilisateursAdmin';
 import LogoutAdmin from '../admin/LogoutAdmin';
@@ -28,7 +28,7 @@ function AppRoutes() {
     <Route path="/a-propos" element={<Apropos />} />
     <Route path="/produits" element={<Produits />} />
     <Route path="/contact" element={<Contact />} />
-    <Route path="/obtenir-devis" element={<ObtenirDevis />} />
+    <Route path="/obtenir-devis" element={<ObtenirDevis />} /> 
   </Route>
 
   <Route path="/admin/login" element={<AdminLogin />} />

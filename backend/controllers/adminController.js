@@ -6,10 +6,10 @@ import dotenv from 'dotenv';
 
 
 
-export const ajouterAdmin = async (req, res) => {
+export const addAdmin = async (req, res) => {
   try {
     const { nom, email, mot_de_passe, role } = req.body;
-
+    
     if (!nom || !email || !mot_de_passe) {
       return res.status(400).json({ error: "Tous les champs sont requis." });
     }
@@ -18,7 +18,7 @@ export const ajouterAdmin = async (req, res) => {
 
     // Vérifie si l'admin existe déjà
     const [existing] = await connection.execute(
-      'SELECT id FROM ADMIN WHERE email = ?',
+      'SELECT id_admin FROM ADMIN WHERE email = ?',
       [email]
     );
 
@@ -31,7 +31,7 @@ export const ajouterAdmin = async (req, res) => {
 
     // Insertion
     const [result] = await connection.execute(
-      'INSERT INTO ADMIN (nom, email, mot_de_passe, role) VALUES (?, ?, ?, ?)',
+      'INSERT INTO ADMIN (nom, email, password, role) VALUES (?, ?, ?, ?)',
       [nom, email, hashedPassword, role || 'admin']
     );
 
@@ -46,7 +46,9 @@ export const ajouterAdmin = async (req, res) => {
   }
 };
 
-export const getAdmin = async (req, res) =>{
+
+
+export const getAllAdmins = async (req, res) =>{
     try{
         const connection = await connectToDatabase();
         const [rows] = await connection.execute('SELECT * FROM admin');
@@ -66,12 +68,13 @@ export const getAdmin = async (req, res) =>{
 // login admin 
 
 
-const SECRET_KEY = process.env.JWT_SECRET || 'dev-secret';
 
 export const loginAdmin = async (req, res) => {
   const { email, mot_de_passe } = req.body;
 
-  
+  const SECRET_KEY = process.env.JWT_SECRET || 'dev-secret';
+    console.log(email, mot_de_passe);
+    
   if (!email || !mot_de_passe) {
     return res.status(400).json({ error: 'Email et mot de passe requis' });
   }
@@ -119,3 +122,32 @@ export const loginAdmin = async (req, res) => {
   }
 };
 
+export const deleteAdmin = async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log(id);
+    
+    // Vérifie que l'ID est fourni
+    if (!id) {
+      return res.status(400).json({ error: "ID requis pour la suppression" });
+    }
+
+    const connection = await connectToDatabase();
+
+    // Supprime l'admin
+    const [result] = await connection.execute(
+      'DELETE FROM ADMIN WHERE id_admin = ?',
+      [id]
+    );
+
+    // Vérifie s’il y avait bien un admin à supprimer
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Aucun administrateur trouvé avec cet ID" });
+    }
+
+    res.status(200).json({ message: "✅ Administrateur supprimé avec succès" });
+  } catch (err) {
+    console.error("❌ Erreur lors de la suppression de l'administrateur :", err.message);
+    res.status(500).json({ error: "Erreur serveur lors de la suppression" });
+  }
+};

@@ -78,3 +78,25 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
+
+.input-file {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  width: fit-content;
+}
+
+.input-file:hover {
+  background-color: #388e3c;
+}
+
+.input-file input[type="file"] {
+  display: none;
+}

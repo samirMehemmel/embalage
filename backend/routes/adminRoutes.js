@@ -1,10 +1,15 @@
 import express from 'express';
-import { loginAdmin, ajouterAdmin } from '../controllers/adminController.js';
+import {
+  getAllAdmins,
+  addAdmin,
+  deleteAdmin,
+  loginAdmin,
+} from '../controllers/adminController.js';
 
 const router = express.Router();
 
-router.post('/login', loginAdmin); 
-router.post('/ajouter', ajouterAdmin);
-
-
+router.get('/', getAllAdmins); // GET /api/admin
+router.post('/', addAdmin);    // POST /api/admin
+router.delete('/:id', deleteAdmin); // DELETE /api/admin/:id
+router.post('/login', loginAdmin)
 export default router;

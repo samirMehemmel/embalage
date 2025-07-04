@@ -1,25 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Produit.css';
 
-const produits = [
-  {
-    title: 'Sacs Kraft Personnalisés',
-    image: '/assets/images/sac-kraft.png',
-    description: 'Sacs résistants, écologiques et imprimés à votre image. Formats variés disponibles.',
-  },
-  {
-    title: 'Boîtes Alimentaires',
-    image: '/assets/images/boite-alimentaire.png',
-    description: 'Idéales pour fast-food, pâtisserie ou livraison. Faciles à fermer et à transporter.',
-  },
-  {
-    title: 'Cartons d\'Expédition',
-    image: '/assets/images/carton.png',
-    description: 'Cartons solides pour le transport ou l’emballage industriel. Personnalisables.',
-  },
-];
-
 function Produits() {
+  const [produits, setProduits] = useState([]);
+  const [error, setError] = useState('');
+  const API_URL = 'http://localhost:5000/api';
+
+  useEffect(() => {
+    fetch(`${API_URL}/produits/getproduct`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.produits) {
+          setProduits(data.produits);
+        } else {
+          setError('Erreur lors du chargement des produits.');
+        }
+      })
+      .catch((err) => {
+        console.error('Erreur API:', err);
+        setError('Erreur serveur');
+      });
+  }, []);
+
   return (
     <div className="produits-page">
       <section className="produits-hero">
@@ -36,11 +38,17 @@ function Produits() {
 
       <section className="produits-list">
         <h2>Nos types d’emballages</h2>
+
+        {error && <p className="error">{error}</p>}
+
         <div className="produits-grid">
           {produits.map((item, index) => (
             <div className="produit-card" key={index}>
-              <img src={item.image} alt={item.title} />
-              <h3>{item.title}</h3>
+              <img
+                src={`http://localhost:5000/uploads/${item.image}`}
+                alt={item.nom}
+              />
+              <h3>{item.nom}</h3>
               <p>{item.description}</p>
             </div>
           ))}
@@ -57,7 +65,6 @@ function Produits() {
         </ul>
       </section>
 
-      {/* Call to action */}
       <section className="produits-cta">
         <h3>Besoin d’un emballage spécifique ?</h3>
         <a href="/obtenir-devis" className="cta-button">Demander un devis personnalisé</a>

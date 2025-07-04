@@ -1,4 +1,4 @@
-import { sqlPool } from '../config/db.js';
+import { connectToDatabase } from '../config/db.js';
 
 
 export const getProduits = async (req, res) => {
@@ -15,9 +15,10 @@ export const getProduits = async (req, res) => {
 
 
 export const ajouterProduit = async (req, res) => {
-  const { nom, type, mesures, description, image, prix } = req.body;
+  const { nom, type, mesures, description, prix } = req.body;
+  const image = req.file ? req.file.filename : null;
 
-  if (!nom || !type || !mesures || !description || !image || !prix) {
+  if (!nom || !type || !mesures || !description || !prix || !image) {
     return res.status(400).json({ error: 'Tous les champs sont requis' });
   }
 
